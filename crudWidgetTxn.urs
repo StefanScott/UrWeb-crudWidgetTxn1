@@ -1,7 +1,7 @@
 con colMeta = fn (db :: Type, widget :: Type) => { 
   Nam : string,
   Show : db -> xbody,
-  Widget : nm :: Name -> xml form [] [nm = widget],
+  Widget : nm :: Name -> transaction (xml form [] [nm = widget]),
   Parse : widget -> db,
   Inject : sql_injectable db }
 

@@ -1,0 +1,416 @@
+$ urweb -dbms postgres -db "host=localhost port=5432 user=scott password='pw' dbname=crud_widget_txn_1" crudWidgetTxn1
+
+crudWidgetTxn.ur:86:12: (to 92:22) Unification failure
+
+Expression: 
+fn nm :: Name =>
+ fn t :: (Type * Type) =>
+  fn rest :: {(Type * Type)} =>
+   fn col :
+    {Nam : string, 
+      Show :
+       t.1 -> xml ([Dyn = (), MakeForm = (), Body = ()]) ([]) ([]), 
+      Widget :
+       nm :: Name ->
+        transaction
+         (xml ([Dyn = (), Body = (), Form = ()]) ([]) ([nm = t.2])), 
+      Parse : t.2 -> t.1, Inject : sql_injectable t.1} =>
+    fn acc :
+     xml ([Body = (), Dyn = (), Form = ()]) <UNIF:U1109::{Type}>
+      <UNIF:U1016::{Type}> =>
+     Basis.bind [transaction]
+      [xml ([Dyn = (), Body = (), Form = ()]) ([]) ([nm = t.2])]
+      [xml ([Body = (), Dyn = (), Form = ()]) ([])
+        (([nm = t.2]) ++ <UNIF:U1016::{Type}>)] _ (col.#Widget [nm])
+      (fn col_widget_nm :
+        xml ([Body = (), Dyn = (), Form = ()]) ([]) ([nm = t.2]) =>
+        return [transaction]
+         [xml ([Body = (), Dyn = (), Form = ()]) ([])
+           (([nm = t.2]) ++ <UNIF:U1016::{Type}>)] _
+         (Basis.join [[Body = (), Dyn = (), Form = ()]] [[]] [[]]
+           [([nm = t.2]) ++ <UNIF:U1016::{Type}>]
+           (Basis.cdata [[Body = (), Dyn = (), Form = ()]] [[]] "\n")
+           (Basis.join [[Body = (), Dyn = (), Form = ()]] [[]] [[]]
+             [([nm = t.2]) ++ <UNIF:U1016::{Type}>]
+             (Basis.cdata [[Body = (), Dyn = (), Form = ()]] [[]]
+               "                ")
+             (Basis.join [[Body = (), Dyn = (), Form = ()]] [[]]
+               [[nm = t.2]] [<UNIF:U1016::{Type}>]
+               (Basis.tag [[]]
+                 [[Data = data_attr, Id = id, Title = string, 
+                    Role = string, Onblur = transaction {}, 
+                    Onfocus = transaction {}, 
+                    Onclick =
+                     {ScreenX : int, ScreenY : int, ClientX : int, 
+                       ClientY : int, CtrlKey : bool, 
+                       ShiftKey : bool, AltKey : bool, 
+                       MetaKey : bool, Button : mouseButton} ->
+                      transaction {}, 
+                    Oncontextmenu =
+                     {ScreenX : int, ScreenY : int, ClientX : int, 
+                       ClientY : int, CtrlKey : bool, 
+                       ShiftKey : bool, AltKey : bool, 
+                       MetaKey : bool, Button : mouseButton} ->
+                      transaction {}, 
+                    Ondblclick =
+                     {ScreenX : int, ScreenY : int, ClientX : int, 
+                       ClientY : int, CtrlKey : bool, 
+                       ShiftKey : bool, AltKey : bool, 
+                       MetaKey : bool, Button : mouseButton} ->
+                      transaction {}, 
+                    Onmousedown =
+                     {ScreenX : int, ScreenY : int, ClientX : int, 
+                       ClientY : int, CtrlKey : bool, 
+                       ShiftKey : bool, AltKey : bool, 
+                       MetaKey : bool, Button : mouseButton} ->
+                      transaction {}, 
+                    Onmouseenter =
+                     {ScreenX : int, ScreenY : int, ClientX : int, 
+                       ClientY : int, CtrlKey : bool, 
+                       ShiftKey : bool, AltKey : bool, 
+                       MetaKey : bool, Button : mouseButton} ->
+                      transaction {}, 
+                    Onmouseleave =
+                     {ScreenX : int, ScreenY : int, ClientX : int, 
+                       ClientY : int, CtrlKey : bool, 
+                       ShiftKey : bool, AltKey : bool, 
+                       MetaKey : bool, Button : mouseButton} ->
+                      transaction {}, 
+                    Onmousemove =
+                     {ScreenX : int, ScreenY : int, ClientX : int, 
+                       ClientY : int, CtrlKey : bool, 
+                       ShiftKey : bool, AltKey : bool, 
+                       MetaKey : bool, Button : mouseButton} ->
+                      transaction {}, 
+                    Onmouseout =
+                     {ScreenX : int, ScreenY : int, ClientX : int, 
+                       ClientY : int, CtrlKey : bool, 
+                       ShiftKey : bool, AltKey : bool, 
+                       MetaKey : bool, Button : mouseButton} ->
+                      transaction {}, 
+                    Onmouseover =
+                     {ScreenX : int, ScreenY : int, ClientX : int, 
+                       ClientY : int, CtrlKey : bool, 
+                       ShiftKey : bool, AltKey : bool, 
+                       MetaKey : bool, Button : mouseButton} ->
+                      transaction {}, 
+                    Onmouseup =
+                     {ScreenX : int, ScreenY : int, ClientX : int, 
+                       ClientY : int, CtrlKey : bool, 
+                       ShiftKey : bool, AltKey : bool, 
+                       MetaKey : bool, Button : mouseButton} ->
+                      transaction {}, 
+                    Onkeydown =
+                     {KeyCode : int, CtrlKey : bool, ShiftKey : bool, 
+                       AltKey : bool, MetaKey : bool} ->
+                      transaction {}, 
+                    Onkeypress =
+                     {KeyCode : int, CtrlKey : bool, ShiftKey : bool, 
+                       AltKey : bool, MetaKey : bool} ->
+                      transaction {}, 
+                    Onkeyup =
+                     {KeyCode : int, CtrlKey : bool, ShiftKey : bool, 
+                       AltKey : bool, MetaKey : bool} ->
+                      transaction {}, Onresize = transaction {}, 
+                    Onscroll = transaction {}]]
+                 [[Body = (), Dyn = (), Form = ()]]
+                 [[Body = (), Dyn = (), Form = ()]] [[]] [[]] [[]]
+                 [[nm = t.2]] Basis.null
+                 (Basis.None [signal css_class]) Basis.noStyle
+                 (Basis.None [signal css_style]) {}
+                 (li [[Dyn = (), Form = ()]] {})
+                 (Basis.join [[Body = (), Dyn = (), Form = ()]] [[]]
+                   [[]] [[nm = t.2]]
+                   (Basis.cdata [[Body = (), Dyn = (), Form = ()]]
+                     [[]] " ")
+                   (Basis.join [[Body = (), Dyn = (), Form = ()]]
+                     [[]] [[]] [[nm = t.2]]
+                     (cdata [[Body = (), Dyn = (), Form = ()]] [[]]
+                       col.#Nam)
+                     (Basis.join [[Body = (), Dyn = (), Form = ()]]
+                       [[]] [[]] [[nm = t.2]]
+                       (Basis.cdata
+                         [[Body = (), Dyn = (), Form = ()]] [[]] ": ")
+                       col_widget_nm))))
+               (Basis.join [[Body = (), Dyn = (), Form = ()]]
+                 [<UNIF:U1109::{Type}> ++ <UNIF:U1110::{Type}>] [[]]
+                 [<UNIF:U1016::{Type}>]
+                 (Basis.cdata [[Body = (), Dyn = (), Form = ()]]
+                   [<UNIF:U1109::{Type}> ++ <UNIF:U1110::{Type}>]
+                   "\n")
+                 (Basis.join [[Body = (), Dyn = (), Form = ()]]
+                   [<UNIF:U1109::{Type}> ++ <UNIF:U1110::{Type}>]
+                   [[]] [<UNIF:U1016::{Type}>]
+                   (Basis.cdata [[Body = (), Dyn = (), Form = ()]]
+                     [<UNIF:U1109::{Type}> ++ <UNIF:U1110::{Type}>]
+                     "                ")
+                   (Basis.join [[Body = (), Dyn = (), Form = ()]]
+                     [<UNIF:U1109::{Type}> ++ <UNIF:U1110::{Type}>]
+                     [<UNIF:U1016::{Type}>] [[]]
+                     (useMore [[Body = (), Dyn = (), Form = ()]]
+                       [<UNIF:U1109::{Type}>] [<UNIF:U1110::{Type}>]
+                       [<UNIF:U1016::{Type}>] acc)
+                     (Basis.join [[Body = (), Dyn = (), Form = ()]]
+                       [<UNIF:U1109::{Type}> ++
+                         <UNIF:U1110::{Type}> ++ <UNIF:U1016::{Type}>]
+                       [[]] [[]]
+                       (Basis.cdata
+                         [[Body = (), Dyn = (), Form = ()]]
+                         [<UNIF:U1109::{Type}> ++
+                           <UNIF:U1110::{Type}> ++
+                            <UNIF:U1016::{Type}>] "\n")
+                       (Basis.cdata
+                         [[Body = (), Dyn = (), Form = ()]]
+                         [<UNIF:U1109::{Type}> ++
+                           <UNIF:U1110::{Type}> ++
+                            <UNIF:U1016::{Type}>] "              ")))))))))
+
+  Have con: 
+nm :: Name ->
+ t :: (Type * Type) ->
+  rest :: {(Type * Type)} ->
+   [[nm = ()] ~ rest] =>
+    {Nam : string, 
+      Show :
+       t.1 -> xml ([Dyn = (), MakeForm = (), Body = ()]) ([]) ([]), 
+      Widget :
+       nm :: Name ->
+        transaction
+         (xml ([Dyn = (), Body = (), Form = ()]) ([]) ([nm = t.2])), 
+      Parse : t.2 -> t.1, Inject : sql_injectable t.1} ->
+     (xml ([Body = (), Dyn = (), Form = ()]) <UNIF:U1109::{Type}>
+       <UNIF:U1016::{Type}>) ->
+      transaction
+       (xml ([Body = (), Dyn = (), Form = ()]) ([])
+         (([nm = t.2]) ++ <UNIF:U1016::{Type}>))
+
+  Need con: 
+nm :: Name ->
+ t :: (Type * Type) ->
+  rest :: {(Type * Type)} ->
+   [[nm = ()] ~ rest] =>
+    {Nam : string, 
+      Show :
+       t.1 -> xml ([Dyn = (), MakeForm = (), Body = ()]) ([]) ([]), 
+      Widget :
+       nm :: Name ->
+        transaction
+         (xml ([Dyn = (), Body = (), Form = ()]) ([]) ([nm = t.2])), 
+      Parse : t.2 -> t.1, Inject : sql_injectable t.1} ->
+     (transaction
+       (xml ([Dyn = (), Body = (), Form = ()]) ([])
+         (map (fn t :: (Type * Type) => t.2) rest))) ->
+      transaction
+       (xml ([Dyn = (), Body = (), Form = ()]) ([])
+         (([nm = t.2]) ++ map (fn t :: (Type * Type) => t.2) rest))
+
+Incompatible constructors
+
+Have:  xml ([Body = (), Dyn = (), Form = ()]) <UNIF:U1109::{Type}>
+
+Need:  transaction
+
+
+crudWidgetTxn.ur:83:12: (to 95:18) Unification failure
+
+Expression: 
+foldR[[(Type * Type)]]
+ [(fn $x :: (Type * Type) =>
+    {Nam : string, 
+      Show :
+       $x.1 -> xml ([Dyn = (), MakeForm = (), Body = ()]) ([]) ([]), 
+      Widget :
+       nm :: Name ->
+        transaction
+         (xml ([Dyn = (), Body = (), Form = ()]) ([]) ([nm = $x.2])), 
+      Parse : $x.2 -> $x.1, Inject : sql_injectable $x.1})]
+ [(fn cols :: {(Type * Type)} =>
+    transaction
+     (xml ([Dyn = (), Body = (), Form = ()]) ([])
+       (map (fn t :: (Type * Type) => t.2) cols)))]
+ (fn nm :: Name =>
+   fn t :: (Type * Type) =>
+    fn rest :: {(Type * Type)} =>
+     fn col :
+      {Nam : string, 
+        Show :
+         t.1 -> xml ([Dyn = (), MakeForm = (), Body = ()]) ([]) ([]), 
+        Widget :
+         nm :: Name ->
+          transaction
+           (xml ([Dyn = (), Body = (), Form = ()]) ([]) ([nm = t.2])),
+                                                                      
+        Parse : t.2 -> t.1, Inject : sql_injectable t.1} =>
+      fn acc :
+       xml ([Body = (), Dyn = (), Form = ()]) <UNIF:U1109::{Type}>
+        <UNIF:U1016::{Type}> =>
+       Basis.bind [transaction]
+        [xml ([Dyn = (), Body = (), Form = ()]) ([]) ([nm = t.2])]
+        [xml ([Body = (), Dyn = (), Form = ()]) ([])
+          (([nm = t.2]) ++ <UNIF:U1016::{Type}>)] _
+        (col.#Widget [nm])
+        (fn col_widget_nm :
+          xml ([Body = (), Dyn = (), Form = ()]) ([]) ([nm = t.2]) =>
+          return [transaction]
+           [xml ([Body = (), Dyn = (), Form = ()]) ([])
+             (([nm = t.2]) ++ <UNIF:U1016::{Type}>)] _
+           (Basis.join [[Body = (), Dyn = (), Form = ()]] [[]] [[]]
+             [([nm = t.2]) ++ <UNIF:U1016::{Type}>]
+             (Basis.cdata [[Body = (), Dyn = (), Form = ()]] [[]]
+               "\n")
+             (Basis.join [[Body = (), Dyn = (), Form = ()]] [[]] [[]]
+               [([nm = t.2]) ++ <UNIF:U1016::{Type}>]
+               (Basis.cdata [[Body = (), Dyn = (), Form = ()]] [[]]
+                 "                ")
+               (Basis.join [[Body = (), Dyn = (), Form = ()]] [[]]
+                 [[nm = t.2]] [<UNIF:U1016::{Type}>]
+                 (Basis.tag [[]]
+                   [[Data = data_attr, Id = id, Title = string, 
+                      Role = string, Onblur = transaction {}, 
+                      Onfocus = transaction {}, 
+                      Onclick =
+                       {ScreenX : int, ScreenY : int, ClientX : int, 
+                         ClientY : int, CtrlKey : bool, 
+                         ShiftKey : bool, AltKey : bool, 
+                         MetaKey : bool, Button : mouseButton} ->
+                        transaction {}, 
+                      Oncontextmenu =
+                       {ScreenX : int, ScreenY : int, ClientX : int, 
+                         ClientY : int, CtrlKey : bool, 
+                         ShiftKey : bool, AltKey : bool, 
+                         MetaKey : bool, Button : mouseButton} ->
+                        transaction {}, 
+                      Ondblclick =
+                       {ScreenX : int, ScreenY : int, ClientX : int, 
+                         ClientY : int, CtrlKey : bool, 
+                         ShiftKey : bool, AltKey : bool, 
+                         MetaKey : bool, Button : mouseButton} ->
+                        transaction {}, 
+                      Onmousedown =
+                       {ScreenX : int, ScreenY : int, ClientX : int, 
+                         ClientY : int, CtrlKey : bool, 
+                         ShiftKey : bool, AltKey : bool, 
+                         MetaKey : bool, Button : mouseButton} ->
+                        transaction {}, 
+                      Onmouseenter =
+                       {ScreenX : int, ScreenY : int, ClientX : int, 
+                         ClientY : int, CtrlKey : bool, 
+                         ShiftKey : bool, AltKey : bool, 
+                         MetaKey : bool, Button : mouseButton} ->
+                        transaction {}, 
+                      Onmouseleave =
+                       {ScreenX : int, ScreenY : int, ClientX : int, 
+                         ClientY : int, CtrlKey : bool, 
+                         ShiftKey : bool, AltKey : bool, 
+                         MetaKey : bool, Button : mouseButton} ->
+                        transaction {}, 
+                      Onmousemove =
+                       {ScreenX : int, ScreenY : int, ClientX : int, 
+                         ClientY : int, CtrlKey : bool, 
+                         ShiftKey : bool, AltKey : bool, 
+                         MetaKey : bool, Button : mouseButton} ->
+                        transaction {}, 
+                      Onmouseout =
+                       {ScreenX : int, ScreenY : int, ClientX : int, 
+                         ClientY : int, CtrlKey : bool, 
+                         ShiftKey : bool, AltKey : bool, 
+                         MetaKey : bool, Button : mouseButton} ->
+                        transaction {}, 
+                      Onmouseover =
+                       {ScreenX : int, ScreenY : int, ClientX : int, 
+                         ClientY : int, CtrlKey : bool, 
+                         ShiftKey : bool, AltKey : bool, 
+                         MetaKey : bool, Button : mouseButton} ->
+                        transaction {}, 
+                      Onmouseup =
+                       {ScreenX : int, ScreenY : int, ClientX : int, 
+                         ClientY : int, CtrlKey : bool, 
+                         ShiftKey : bool, AltKey : bool, 
+                         MetaKey : bool, Button : mouseButton} ->
+                        transaction {}, 
+                      Onkeydown =
+                       {KeyCode : int, CtrlKey : bool, 
+                         ShiftKey : bool, AltKey : bool, 
+                         MetaKey : bool} -> transaction {}, 
+                      Onkeypress =
+                       {KeyCode : int, CtrlKey : bool, 
+                         ShiftKey : bool, AltKey : bool, 
+                         MetaKey : bool} -> transaction {}, 
+                      Onkeyup =
+                       {KeyCode : int, CtrlKey : bool, 
+                         ShiftKey : bool, AltKey : bool, 
+                         MetaKey : bool} -> transaction {}, 
+                      Onresize = transaction {}, 
+                      Onscroll = transaction {}]]
+                   [[Body = (), Dyn = (), Form = ()]]
+                   [[Body = (), Dyn = (), Form = ()]] [[]] [[]] [[]]
+                   [[nm = t.2]] Basis.null
+                   (Basis.None [signal css_class]) Basis.noStyle
+                   (Basis.None [signal css_style]) {}
+                   (li [[Dyn = (), Form = ()]] {})
+                   (Basis.join [[Body = (), Dyn = (), Form = ()]]
+                     [[]] [[]] [[nm = t.2]]
+                     (Basis.cdata [[Body = (), Dyn = (), Form = ()]]
+                       [[]] " ")
+                     (Basis.join [[Body = (), Dyn = (), Form = ()]]
+                       [[]] [[]] [[nm = t.2]]
+                       (cdata [[Body = (), Dyn = (), Form = ()]] [[]]
+                         col.#Nam)
+                       (Basis.join [[Body = (), Dyn = (), Form = ()]]
+                         [[]] [[]] [[nm = t.2]]
+                         (Basis.cdata
+                           [[Body = (), Dyn = (), Form = ()]] [[]]
+                           ": ") col_widget_nm))))
+                 (Basis.join [[Body = (), Dyn = (), Form = ()]]
+                   [<UNIF:U1109::{Type}> ++ <UNIF:U1110::{Type}>]
+                   [[]] [<UNIF:U1016::{Type}>]
+                   (Basis.cdata [[Body = (), Dyn = (), Form = ()]]
+                     [<UNIF:U1109::{Type}> ++ <UNIF:U1110::{Type}>]
+                     "\n")
+                   (Basis.join [[Body = (), Dyn = (), Form = ()]]
+                     [<UNIF:U1109::{Type}> ++ <UNIF:U1110::{Type}>]
+                     [[]] [<UNIF:U1016::{Type}>]
+                     (Basis.cdata [[Body = (), Dyn = (), Form = ()]]
+                       [<UNIF:U1109::{Type}> ++ <UNIF:U1110::{Type}>]
+                       "                ")
+                     (Basis.join [[Body = (), Dyn = (), Form = ()]]
+                       [<UNIF:U1109::{Type}> ++ <UNIF:U1110::{Type}>]
+                       [<UNIF:U1016::{Type}>] [[]]
+                       (useMore [[Body = (), Dyn = (), Form = ()]]
+                         [<UNIF:U1109::{Type}>]
+                         [<UNIF:U1110::{Type}>]
+                         [<UNIF:U1016::{Type}>] acc)
+                       (Basis.join [[Body = (), Dyn = (), Form = ()]]
+                         [<UNIF:U1109::{Type}> ++
+                           <UNIF:U1110::{Type}> ++
+                            <UNIF:U1016::{Type}>] [[]] [[]]
+                         (Basis.cdata
+                           [[Body = (), Dyn = (), Form = ()]]
+                           [<UNIF:U1109::{Type}> ++
+                             <UNIF:U1110::{Type}> ++
+                              <UNIF:U1016::{Type}>] "\n")
+                         (Basis.cdata
+                           [[Body = (), Dyn = (), Form = ()]]
+                           [<UNIF:U1109::{Type}> ++
+                             <UNIF:U1110::{Type}> ++
+                              <UNIF:U1016::{Type}>] "              "))))))))))
+ (return [transaction]
+   [xml ([Dyn = (), Body = (), Form = ()]) ([]) ([])] _
+   (Basis.cdata [[Dyn = (), Body = (), Form = ()]] [[]] "")) [M.cols]
+ M.fl M.cols
+
+  Have con: 
+transaction
+ (xml ([Dyn = (), Body = (), Form = ()]) ([])
+   (map (fn t :: (Type * Type) => t.2) M.cols))
+
+  Need con: 
+xml <UNIF:U978::{Unit}> <UNIF:U979::{Type}> <UNIF:U980::{Type}>
+
+Incompatible constructors
+
+Have:  transaction
+
+Need:  xml <UNIF:U978::{Unit}> <UNIF:U979::{Type}>
+
+$ 

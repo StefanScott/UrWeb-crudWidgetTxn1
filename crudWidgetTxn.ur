@@ -1,7 +1,7 @@
 con colMeta = fn (db :: Type, widget :: Type) => { 
   Nam : string,
   Show : db -> xbody,
-  Widget : nm :: Name -> xml form [] [nm = widget],
+  Widget : nm :: Name -> transaction (xml form [] [nm = widget]),
   Parse : widget -> db,
   Inject : sql_injectable db }
 
@@ -11,7 +11,7 @@ fun default [t] (sh : show t) (rd : read t) (inj : sql_injectable t)
   name : colMeta (t, string) = {
     Nam = name,
     Show = txt,
-    Widget = fn [nm :: Name] => <xml><textbox{nm}/></xml>,
+    Widget = fn [nm :: Name] => return <xml><textbox{nm}/></xml>,
     Parse = readError,
     Inject = _ }
 
@@ -22,7 +22,7 @@ val string = default
 fun bool name = {
   Nam = name,
   Show = txt,
-  Widget = fn [nm :: Name] => <xml><checkbox{nm}/></xml>,
+  Widget = fn [nm :: Name] => return <xml><checkbox{nm}/></xml>,
   Parse = fn x => x,
   Inject = _ }
 
@@ -82,13 +82,15 @@ struct
         <form>
           { @foldR 
             [ colMeta ] 
-            [ fn cols => xml form [] (map snd cols) ]
+            [ fn cols => transaction (xml form [] (map snd cols)) ]
             ( fn [nm :: Name] [t ::_] [rest ::_] [[nm] ~ rest] (col : colMeta t) acc => 
+              col_widget_nm <- col.Widget [nm] ;
+              return 
               <xml>
-                <li> {cdata col.Nam}: {col.Widget [nm]}</li>
+                <li> {cdata col.Nam}: {col_widget_nm}</li>
                 {useMore acc}
               </xml> )
-            <xml/>
+            (return <xml/>)
             M.fl 
             M.cols }
           <submit action={create}/>
