@@ -1,0 +1,38 @@
+### compile the program
+
+# first change the values for user and password below!
+
+urweb -dbms postgres -db "host=localhost port=5432 user=scott password='pw' dbname=crud_widget_txn_1" crudWidgetTxn1
+
+
+# optional - drop old db
+dropdb crud_widget_txn_1
+
+# optional - create new db
+createdb crud_widget_txn_1
+
+# optional - run the script generated during the compile
+psql -f crud_widget_txn_1.sql crud_widget_txn_1
+
+
+### minimal "server block" for nginx - change the server names below!
+
+server {
+  listen 80;
+  server_name 
+    personalenglish.org
+    www.personalenglish.org
+    *.personalenglish.org;
+
+  location / {
+    proxy_pass http://127.0.0.1:8080/;
+  }
+}
+
+### run the program (using nohup for "no hang-up")
+
+nohup ./crudWidgetTxn1.exe &
+
+
+### launch a browser, and point it to:
+http://personalenglish.org/CrudWidgetTxn1/main

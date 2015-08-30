@@ -1,0 +1,5 @@
+database dbname=crud_widget_txn_1
+sql crud_widget_txn_1.sql
+
+crudWidgetTxn
+crudWidgetTxn1
