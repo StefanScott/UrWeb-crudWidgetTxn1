@@ -24,7 +24,7 @@ I am attempting to do a minimal modification of the Crud1 demo, to change the re
 
 My (minimal) changes are highlighted in a specially created GitHub repo having only 2 commits:
 
-(1) The *first* commit is (a simplified version of) the Crud1 demo - it only does SELECT and INSERT - no DELETE or UPDATE. Being based directly on Crud1, it compiles and runs correctly.
+(1) The *first* commit is (a simplified version of) the Crud1 demo (it only does SELECT and INSERT - no DELETE or UPDATE). Being based directly on Crud1, it compiles and runs correctly.
 
 (2) The *second* commit merely changes the result type of `Widget` from `xml` to `transaction xml` - in three places:
 
@@ -87,9 +87,9 @@ I adopted this strategy because:
 
 (a) If I want `Widget` to return a `<select>` tag containing `<option>` tags, this requires doing a "transaction" to read the database - so it seems that it will be necessary for `Widget` to return a "transactional" type.
 
-(b) The working, non-meta-programming example ColorSize demonstrates that it is indeed possible to insert something of type `transaction xml` inside something of type `transaction form`.
+(b) The working, non-meta-programming example [UrWeb-colorSize](https://github.com/StefanScott/UrWeb-colorSize) demonstrates that it is indeed possible to insert something of type `transaction xml` inside something of type `transaction form`.
 
-(c) Due to the complexity of the higher-order types in the Crud1 demo, I would like to perform a "surgical" or "extremely limited" extension - changing a *little* of it as possible, so as to be able to continue to use most of the existing, correct code (which involves several higher-order functions that would be very difficult for me to correctly define "from scratch"!)
+(c) Due to the complexity of the higher-order types in the Crud1 demo, I would like to perform a "surgical" or "extremely limited" extension - changing as *little* of Crud1 as possible, so as to be able to leverage most of the existing, correct code (which involves several higher-order functions that would be very difficult for me to correctly define "from scratch"!)
 
 Thanks for any help!
 
@@ -125,9 +125,9 @@ There is a live demo online, plus a GitHub repo:
 
 **Contribution of the working, *non-meta-programming* example:**
 
-I had been conjecturing that the error in the non-working, meta-programming example might have been due to attempting to put something of type `transaction xml` inside a `<form>`.
+Previously, I had made a conjecture that the error in the present non-working, meta-programming example might have been due to attempting to put something of type `transaction xml` inside a `<form>`.
 
-However, the *non-meta-programming* example above (ColorSize) *does* successfully insert something (`color_options_xml`) of type `transaction xml` into a `<form>` tag, here:
+However, the *non-meta-programming* example above (ColorSize) disproves this conjecture, because it *does* successfully insert something (`color_options_xml`) of type `transaction xml` into a `<form>` tag, here:
 
 ---
 
@@ -160,6 +160,8 @@ https://github.com/StefanScott/UrWeb-colorSize/blob/master/colorSize.ur#L399-L41
 ---
 
 So the (working) *non-meta-programming* example [UrWeb-colorSize](https://github.com/StefanScott/UrWeb-colorSize) shows that it is indeed possible to insert something of type `transaction xml` into a `<form>` tag - which indicates that the error in the present (non-working) *meta-programming* example UrWeb-crudWidgetTxn1 is being caused by something *else*.
+
+Thanks for any help getting the present, meta-programming version to compile using result type `transaction xml` for `Widget`.
 
 ###
 
