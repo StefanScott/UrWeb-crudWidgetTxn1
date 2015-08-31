@@ -159,7 +159,7 @@ https://github.com/StefanScott/UrWeb-colorSize/blob/master/colorSize.ur#L399-L41
 ```
 ---
 
-So the working, non-meta-programming example [UrWeb-colorSize](https://github.com/StefanScott/UrWeb-colorSize) shows that it is indeed possible to insert something of type `transaction xml` into a `<form>` tag - which indicates that the error in the (non-working) *meta-programming* example UrWeb-crudWidgetTxn1 is being caused by something *else*.
+So the (working) *non-meta-programming* example [UrWeb-colorSize](https://github.com/StefanScott/UrWeb-colorSize) shows that it is indeed possible to insert something of type `transaction xml` into a `<form>` tag - which indicates that the error in the present (non-working) *meta-programming* example UrWeb-crudWidgetTxn1 is being caused by something *else*.
 
 ###
 
