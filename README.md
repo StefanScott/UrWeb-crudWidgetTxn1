@@ -53,7 +53,7 @@ My new version gives "Unification failure" compile errors ("Have transaction, Ne
 The portions below underlined using (* ^^^^ *) are probably incorrect:
 
   https://github.com/StefanScott/UrWeb-crudWidgetTxn1/blob/master/crudWidgetTxn.ur#L82-L98
-
+```
   <form>
     { @foldR 
       [ colMeta ] 
@@ -73,7 +73,7 @@ The portions below underlined using (* ^^^^ *) are probably incorrect:
       M.cols }
     <submit action={create}/>
   </form>
-
+```
 
 **Question (1):**
 
