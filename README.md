@@ -1,9 +1,9 @@
-**Modifying the Crud1 demo: Attempting to change the result type of Widget from `xml` to `transaction xml`**
+**Modifying the Crud1 demo: Attempting to change the result type of `Widget` from `xml` to `transaction xml` - Does not compile yet!**
 
 
 **Goal:**
 
-I am attempting to do a minimal modification of the Crud1 demo, to change the result type of the Widget field in the constructor `colMeta` from `xml` to `transaction xml`:
+I am attempting to do a minimal modification of the Crud1 demo, to change the result type of the `Widget` field in the constructor `colMeta` from `xml` to `transaction xml`:
 
   OLD: http://www.impredicative.com/ur/demo/crud1.html
 
@@ -11,11 +11,11 @@ I am attempting to do a minimal modification of the Crud1 demo, to change the re
 
   DIFF: https://github.com/StefanScott/UrWeb-crudWidgetTxn1/commit/77edc38ce23d44e7e00910e433feb9946a7ad1d9
 
-- The Widget field in (my simplified, working version of) the Crud1 demo originally declares a function having result type of `xml`:
+- The `Widget` field in (my simplified, working version of) the Crud1 demo originally declares a function having result type of `xml`:
 
     `Widget : nm :: Name -> xml form [] [nm = widget]`
 
-- The Widget field in my new (non-working) version UrWeb-crudWidgetTxn1 has been changed, so that it now declares a function having result type `transaction xml`:
+- The `Widget` field in my new (non-working) version UrWeb-crudWidgetTxn1 has been changed, so that it now declares a function having result type `transaction xml`:
 
     `Widget : nm :: Name -> transaction (xml form [] [nm = widget])`
 
@@ -26,7 +26,7 @@ My (minimal) changes are highlighted in a specially created GitHub repo having o
 
 (1) The *first* commit is (a simplified version of) the Crud1 demo - it only does SELECT and INSERT - no DELETE or UPDATE. Being based directly on Crud1, it compiles and runs correctly.
 
-(2) The *second* commit merely changes the result type of Widget from `xml` to `transaction xml` - in three places:
+(2) The *second* commit merely changes the result type of `Widget` from `xml` to `transaction xml` - in three places:
 
   https://github.com/StefanScott/UrWeb-crudWidgetTxn1/commit/77edc38ce23d44e7e00910e433feb9946a7ad1d9
 
@@ -85,7 +85,7 @@ Does this overall strategy make sense - minimally modifying Crud1 to change the 
 
 I adopted this strategy because:
 
-(a) If I want Widget to return a `<select>` tag containing `<option>` tags, this requires doing a "transaction" to read the database - so it seems that it will be necessary for Widget to return a "transactional" type.
+(a) If I want `Widget` to return a `<select>` tag containing `<option>` tags, this requires doing a "transaction" to read the database - so it seems that it will be necessary for `Widget` to return a "transactional" type.
 
 (b) The working, non-meta-programming example ColorSize demonstrates that it is indeed possible to insert something of type `transaction xml` inside something of type `transaction form`.
 
@@ -97,17 +97,17 @@ Thanks for any help!
 
 **Motivation:**
 
-I believe that changing the result type of the Widget function is necessary for a related project: defining data-bound `<select>` widgets for foreign-key fields.
+I believe that changing the result type of the `Widget` function is necessary for a related project: defining data-bound `<select>` widgets for foreign-key fields.
 
 This requires doing a "read" transaction on the database - eg, running `queryX1` to create `<option>` tags in a `<select>` tag, corresponding to records in the "parent" table of the foreign-key field.
 
-For *non-foreign* fields of types `bool`, `int`, `float` and `string`, the Crud1 demo already includes examples of definitions of functions for the Widget field which return a `<textbox>` and a `<checkbox>`.
+For *non-foreign* fields of types `bool`, `int`, `float` and `string`, the Crud1 demo already includes examples of definitions of functions for the `Widget` field which return a `<textbox>` and a `<checkbox>`.
 
-For cases where the Widget's column is a *foreign-key* column, I want to define a function returning a `<select>` tag containing `<option>` tags. This will of course require performing a "read" transaction on the database - in order to query the records of the "parent" table of the foreign-key column.
+For cases where the `Widget`'s column is a *foreign-key* column, I want to define a function returning a `<select>` tag containing `<option>` tags. This will of course require performing a "read" transaction on the database - in order to query the records of the "parent" table of the foreign-key column.
 
 I therefore believe that the `<select>` widget, composed of `<option>` tags, *must* be a transactional type, due to the need to read the database to select the records used to build the actual widget.
 
-So it seems that a good approach would be to modify the Crud1 demo so that the function in the Widget field has a result type of `transaction xml` instead of `xml`.
+So it seems that a good approach would be to modify the Crud1 demo so that the function in the `Widget` field has a result type of `transaction xml` instead of `xml`.
 
 
 **Comparison with a working, *non-meta-programming* example:**
