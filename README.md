@@ -132,18 +132,17 @@ However, the *non-meta-programming* example above (ColorSize) *does* successfull
 ---
 
 https://github.com/StefanScott/UrWeb-colorSize/blob/master/colorSize.ur#L378-L381
-
+```
   color_options_xml <- 
 (*^^^^^^^^^^^^^^^^^*)
     queryX1 
       ( SELECT * FROM color ORDER BY color.Nam)
       ( fn r => <xml> <option> {[r.Nam]} </option> </xml> )
   ;
-
----
+```
 
 https://github.com/StefanScott/UrWeb-colorSize/blob/master/colorSize.ur#L399-L415
-
+```
   <form>
     <h2>Add a Thing:</h2>
     <table>
@@ -157,7 +156,7 @@ https://github.com/StefanScott/UrWeb-colorSize/blob/master/colorSize.ur#L399-L41
       <tr> <th/> <td> <submit action={create} value="Add Thing !"/> </td> </tr>
     </table>
   </form>
-
+```
 ---
 
 So this working, non-meta-programming UrWeb-colorSize shows that it is indeed possible to insert something of type `transaction xml` into a `<form>` tag - which indicates that the error in the (non-working) *meta-programming* example UrWeb-crudWidgetTxn1 is being caused by something *else*.
