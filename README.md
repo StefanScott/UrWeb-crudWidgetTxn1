@@ -13,11 +13,11 @@ I am attempting to do a minimal modification of the Crud1 demo, to change the re
 
 - The Widget field in (my simplified, working version of) the Crud1 demo originally declares a function having result type of `xml`:
 
-    Widget : nm :: Name -> xml form [] [nm = widget]
+    `Widget : nm :: Name -> xml form [] [nm = widget]`
 
 - The Widget field in my new (non-working) version UrWeb-crudWidgetTxn1 has been changed, so that it now declares a function having result type `transaction xml`:
 
-    Widget : nm :: Name -> transaction (xml form [] [nm = widget])
+    `Widget : nm :: Name -> transaction (xml form [] [nm = widget])`
 
 
 **GitHub commit allowing line-by-line comparison:**
@@ -45,12 +45,12 @@ My modified version of Crud1, using *meta-programming*, does not compile.
 
 I suspect this is because something is wrong with the types of the arguments in the call to `@foldR`.
 
-My new version gives "Unification failure" compile errors ("Have transaction, Need xml" and "Have xml, Need transation"). The complete compile error message is here:
+My new version gives "Unification failure" compile errors ("Have transaction, Need xml" and "Have xml, Need transaction"). The complete compile error message is here:
 
   https://github.com/StefanScott/UrWeb-crudWidgetTxn1/blob/master/err.001.txt
 
 
-The portions below underlined using (* ^^^^ *) are probably incorrect:
+The portions below underlined using `(* ^^^^ *)` are probably incorrect:
 
   https://github.com/StefanScott/UrWeb-crudWidgetTxn1/blob/master/crudWidgetTxn.ur#L82-L98
 ```
@@ -93,19 +93,19 @@ I adopted this strategy because:
 
 Thanks for any help!
 
-===
+---
 
 **Motivation:**
 
-I believe changing the result type of the Widget function is necessary for a related project: defining data-bound `<select>` widgets for foreign-key fields.
+I believe that changing the result type of the Widget function is necessary for a related project: defining data-bound `<select>` widgets for foreign-key fields.
 
-This requires doing a "read" transaction on the database - eg, running `queryX1` to create `<option>` tags in a <select> tag, corresponding to records in the "parent" table of the foreign-key field.
+This requires doing a "read" transaction on the database - eg, running `queryX1` to create `<option>` tags in a `<select>` tag, corresponding to records in the "parent" table of the foreign-key field.
 
 For *non-foreign* fields of types `bool`, `int`, `float` and `string`, the Crud1 demo already includes examples of definitions of functions for the Widget field which return a `<textbox>` and a `<checkbox>`.
 
 For cases where the Widget's column is a *foreign-key* column, I want to define a function returning a `<select>` tag containing `<option>` tags. This will of course require performing a "read" transaction on the database - in order to query the records of the "parent" table of the foreign-key column.
 
-I therefore believe that the <select> widget, composed of <option> tags, *must* be a transactional type, due to the need to read the database to select the records used to build the actual widget.
+I therefore believe that the `<select>` widget, composed of `<option>` tags, *must* be a transactional type, due to the need to read the database to select the records used to build the actual widget.
 
 So it seems that a good approach would be to modify the Crud1 demo so that the function in the Widget field has a result type of `transaction xml` instead of `xml`.
 
